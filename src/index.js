@@ -1,4 +1,4 @@
-require("./styles/styles.css")
+// require("./styles/styles.css")
 //
 // function myFunction() {
 //     var a = document.getElementById("myList2").ChildNodes.length;
@@ -73,6 +73,112 @@ require("./styles/styles.css")
 // // div.appendChild(cardBody2);
 // console.log(div);
 // any.appendChild(div);
+function resetForm(form) {
+    // clearing inputs
+    var inputs = form.getElementsByTagName('input');
+    //console.log(inputs)
+    for (var i = 0; i<inputs.length; i++) {
+        switch (inputs[i].type) {
+            // case 'hidden':
+            case 'text':
+                inputs[i].value = '';
+                break;
+            case 'radio':
+            case 'checkbox':
+                inputs[i].checked = false;
+        }
+    }
+
+    // clearing selects
+    var selects = form.getElementsByTagName('select');
+    for (var i = 0; i<selects.length; i++)
+        selects[i].selectedIndex = 0;
+
+    // clearing textarea
+    var text= form.getElementsByTagName('textarea');
+    for (var i = 0; i<text.length; i++)
+        text[i].innerHTML= '';
+//console.log(text.value)
+    return false;
+}
+
+window.card = function (title, text) {
+  var card = document.createElement('div');
+  card.className = "card";
+
+
+  var cardBody = document.createElement('div');
+  cardBody.className = "card-body";
+  h3 = document.createElement('h3'),
+  p = document.createElement('p');
+  h3.className = 'card-title';
+  p.className = 'card-text';
+  // ul = document.createElement('ul');
+  // li = document.createElement('li');
+  // li1 = document.createElement('li');
+  // li2 = document.createElement('li');
+  // li3 = document.createElement('li');
+  h3.innerHTML = title ;
+  p.innerHTML = text;
+  // ul.appendChild(li);
+  // ul.appendChild(li1);
+  // ul.appendChild(li2);
+  // ul.appendChild(li3);
+  cardBody.appendChild(h3);
+  cardBody.appendChild(p);
+  console.log(cardBody);
+  $(cardBody).append('<button class="btn btn-primary delete waves-effect waves-light">Delete Note</button>');
+  card.appendChild(cardBody);
+  // document.getElementById('any').appendChild(card);
+  return card;
+}
+window.addItem = function () {
+  const sasa = document.getElementById('any');
+  sasa.appendChild(card(document.addCard.title.value, document.addCard.text.value));
+  console.log(card(document.addCard.title.value, document.addCard.text.value));
+  var newguy = {
+    "title" : document.addCard.title.value,
+    "text" : document.addCard.text.value
+  }
+
+  resetForm(document.addCard);
+
+  $.ajax({
+    url:"http://localhost:3000/posts",
+    method:"POST",
+    data:newguy
+  }).done(function(data){
+    console.log(data);
+  })
+}
+
+window.newfunction = function(){
+  const sasa = document.getElementById('any');
+  $.ajax({
+    url:"http://localhost:3000/posts",
+    method:"GET"
+    }).done(function(data){
+        data.map(function(data){
+          sasa.appendChild(card(data.title,data.text));
+        })
+  })
+}
+
+newfunction();
+
+window.newlist = function () {
+  var newlist = document.createElement('input');
+  newlist.type = "text";
+  console.log(newlist);
+  lst_content.appendChild(newlist)
+  // return newlist;
+}
+window.modal = function () {
+  var modal = document.createElement('input');
+  modal.type = "text";
+  return modal;
+}
+
 window.onload = function() {
 // var btn = document.getElementById("AddBtn");
 // btn.onclick = function myFunction() {
@@ -86,29 +192,8 @@ window.onload = function() {
 // innerDiv.id = 'board-2';
 // divboard.appendChild(innerDiv);
 
-const sasa = document.getElementById('any');
 
-window.card = function () {
-    var cardBody = document.createElement('div');
-    cardBody.className = "card-body";
-    h3 = document.createElement('h3'),
-    ul = document.createElement('ul');
-    li = document.createElement('li');
-    li1 = document.createElement('li');
-    li2 = document.createElement('li');
-    li3 = document.createElement('li');
-    h3.innerHTML = "Notes" ;
-    li.innerHTML = "to do list 1 note";
-    ul.appendChild(li);
-    ul.appendChild(li1);
-    ul.appendChild(li2);
-    ul.appendChild(li3);
-    cardBody.appendChild(h3);
-    cardBody.appendChild(ul);
-    console.log(cardBody);
-    document.getElementById('any').appendChild(cardBody)
-    return cardBody;
-    }
+
 
 
 // function card1() {
@@ -131,34 +216,23 @@ window.card = function () {
 //         }
 
 // console.log(div);
-sasa.appendChild(card());
-sasa.appendChild(card());
-sasa.appendChild(card());
-sasa.appendChild(card());
-sasa.appendChild(card());
-sasa.appendChild(card());
+//const sasa = document.getElementById('any');
+//sasa.appendChild(card('title', 'text1'));
+// sasa.appendChild(card());
+// sasa.appendChild(card());
+// sasa.appendChild(card());
+// sasa.appendChild(card());
+// sasa.appendChild(card());
 
 // sasa.appendChild(card());
 
-window.modal = function () {
-    var modal = document.createElement('input');
-    modal.type = "text";
-
-    return modal;
-    }
 var note_name = document.getElementById("notename");
-note_name.appendChild(modal());
+if (note_name)note_name.appendChild(modal());
 
 
-window.newlist = function () {
-  var newlist = document.createElement('input');
-  newlist.type = "text";
-console.log(newlist);
- lst_content.appendChild(newlist)
-  // return newlist;
-  }
 var lst_content = document.getElementById("listcontent");
-lst_content.appendChild(newlist());
+if (lst_content)lst_content.appendChild(newlist());
+
 
 
 }

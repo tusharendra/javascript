@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "first note ever",
+      "text": "content of the first note ever",
+      "id": 1
     }
   ],
   "comments": [
