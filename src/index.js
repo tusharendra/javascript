@@ -76,8 +76,12 @@
 function resetForm(form) {
     // clearing inputs
 <<<<<<< HEAD
+<<<<<<< HEAD
     const inputs = form.getElementsByTagName('input');
     //console.log(inputs)
+=======
+    var inputs = form.getElementsByTagName('input');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 =======
     var inputs = form.getElementsByTagName('input');
 >>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
@@ -90,7 +94,11 @@ function resetForm(form) {
             case 'radio':
             case 'checkbox':
 <<<<<<< HEAD
+<<<<<<< HEAD
                 inputs[i].checked = false;
+=======
+                inputs[i].checked = false;   
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 =======
                 inputs[i].checked = false;   
 >>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
@@ -99,7 +107,11 @@ function resetForm(form) {
 
     // clearing selects
 <<<<<<< HEAD
+<<<<<<< HEAD
     const selects = form.getElementsByTagName('select');
+=======
+    var selects = form.getElementsByTagName('select');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 =======
     var selects = form.getElementsByTagName('select');
 >>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
@@ -107,6 +119,7 @@ function resetForm(form) {
         selects[i].selectedIndex = 0;
 
     // clearing textarea
+<<<<<<< HEAD
 <<<<<<< HEAD
     const text= form.getElementsByTagName('textarea');
     for (var i = 0; i<text.length; i++)
@@ -122,6 +135,8 @@ window.card = (title, text,id) => {
 
   const cardBody = document.createElement('div');
 =======
+=======
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
     var text= form.getElementsByTagName('textarea');
     for (var i = 0; i<text.length; i++)
         text[i].innerHTML= '';
@@ -134,6 +149,9 @@ window.card = function (title, text) {
   card.className = "card";
   
   var cardBody = document.createElement('div');
+<<<<<<< HEAD
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
+=======
 >>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
   cardBody.className = "card-body";
   h3 = document.createElement('h3'),
@@ -154,6 +172,7 @@ window.card = function (title, text) {
   cardBody.appendChild(h3);
   cardBody.appendChild(p);
   console.log(cardBody);
+<<<<<<< HEAD
 <<<<<<< HEAD
   $(cardBody).append('<button onclick="delfunction()" class="btn btn-primary delete waves-effect waves-light">Delete Note</button>');
   card.appendChild(cardBody);
@@ -455,6 +474,8 @@ newfunction();
 window.newlist = () => {
   const newlist = document.createElement('input');
 =======
+=======
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
   $(cardBody).append('<button class="btn btn-primary delete waves-effect waves-light">Delete Note</button>');
   card.appendChild(cardBody);
   // document.getElementById('any').appendChild(card);
@@ -469,6 +490,9 @@ window.addItem = function () {
 
 window.newlist = function () {
   var newlist = document.createElement('input');
+<<<<<<< HEAD
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
+=======
 >>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
   newlist.type = "text";
   console.log(newlist);
@@ -476,8 +500,13 @@ window.newlist = function () {
   // return newlist;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 window.modal = () => {
   const modal = document.createElement('input');
+=======
+window.modal = function () {
+  var modal = document.createElement('input');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 =======
 window.modal = function () {
   var modal = document.createElement('input');
@@ -487,8 +516,11 @@ window.modal = function () {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 window.onload = () => {
 =======
+=======
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 window.onload = function() {
 >>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 // var btn = document.getElementById("AddBtn");
@@ -528,8 +560,13 @@ window.onload = function() {
 
 // console.log(div);
 <<<<<<< HEAD
+<<<<<<< HEAD
 //const sasa = document.getElementById('any');
 //sasa.appendChild(card('title', 'text1'));
+=======
+const sasa = document.getElementById('any');
+sasa.appendChild(card('title', 'text1'));
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 =======
 const sasa = document.getElementById('any');
 sasa.appendChild(card('title', 'text1'));
@@ -538,6 +575,7 @@ sasa.appendChild(card('title', 'text1'));
 // sasa.appendChild(card());
 // sasa.appendChild(card());
 // sasa.appendChild(card());
+<<<<<<< HEAD
 <<<<<<< HEAD
 // sasa.appendChild(card());
 
@@ -549,16 +587,28 @@ if (note_name)note_name.appendChild(modal());
 =======
 // sasa.appendChild(card());
 
+=======
+// sasa.appendChild(card());
+
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 // sasa.appendChild(card());
 
 var note_name = document.getElementById("notename");
 if (note_name)note_name.appendChild(modal());
+<<<<<<< HEAD
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
+=======
 >>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 
 const lst_content = document.getElementById("listcontent");
 if (lst_content)lst_content.appendChild(newlist());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+var lst_content = document.getElementById("listcontent");
+if (lst_content)lst_content.appendChild(newlist());
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 =======
 var lst_content = document.getElementById("listcontent");
 if (lst_content)lst_content.appendChild(newlist());
