@@ -75,8 +75,12 @@
 // any.appendChild(div);
 function resetForm(form) {
     // clearing inputs
+<<<<<<< HEAD
     const inputs = form.getElementsByTagName('input');
     //console.log(inputs)
+=======
+    var inputs = form.getElementsByTagName('input');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
     for (var i = 0; i<inputs.length; i++) {
         switch (inputs[i].type) {
             // case 'hidden':
@@ -85,16 +89,25 @@ function resetForm(form) {
                 break;
             case 'radio':
             case 'checkbox':
+<<<<<<< HEAD
                 inputs[i].checked = false;
+=======
+                inputs[i].checked = false;   
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
         }
     }
 
     // clearing selects
+<<<<<<< HEAD
     const selects = form.getElementsByTagName('select');
+=======
+    var selects = form.getElementsByTagName('select');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
     for (var i = 0; i<selects.length; i++)
         selects[i].selectedIndex = 0;
 
     // clearing textarea
+<<<<<<< HEAD
     const text= form.getElementsByTagName('textarea');
     for (var i = 0; i<text.length; i++)
         text[i].innerHTML= '';
@@ -108,6 +121,20 @@ window.card = (title, text,id) => {
 
 
   const cardBody = document.createElement('div');
+=======
+    var text= form.getElementsByTagName('textarea');
+    for (var i = 0; i<text.length; i++)
+        text[i].innerHTML= '';
+
+    return false;
+}
+
+window.card = function (title, text) {
+  var card = document.createElement('div');
+  card.className = "card";
+  
+  var cardBody = document.createElement('div');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
   cardBody.className = "card-body";
   h3 = document.createElement('h3'),
   p = document.createElement('p');
@@ -127,6 +154,7 @@ window.card = (title, text,id) => {
   cardBody.appendChild(h3);
   cardBody.appendChild(p);
   console.log(cardBody);
+<<<<<<< HEAD
   $(cardBody).append('<button onclick="delfunction()" class="btn btn-primary delete waves-effect waves-light">Delete Note</button>');
   card.appendChild(cardBody);
   // document.getElementById('any').appendChild(card);
@@ -426,18 +454,43 @@ newfunction();
 
 window.newlist = () => {
   const newlist = document.createElement('input');
+=======
+  $(cardBody).append('<button class="btn btn-primary delete waves-effect waves-light">Delete Note</button>');
+  card.appendChild(cardBody);
+  // document.getElementById('any').appendChild(card);
+  return card;
+}
+window.addItem = function () {
+  const sasa = document.getElementById('any');
+  sasa.appendChild(card(document.addCard.title.value, document.addCard.text.value));
+  resetForm(document.addCard);
+}
+
+
+window.newlist = function () {
+  var newlist = document.createElement('input');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
   newlist.type = "text";
   console.log(newlist);
   lst_content.appendChild(newlist)
   // return newlist;
 }
+<<<<<<< HEAD
 window.modal = () => {
   const modal = document.createElement('input');
+=======
+window.modal = function () {
+  var modal = document.createElement('input');
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
   modal.type = "text";
   return modal;
 }
 
+<<<<<<< HEAD
 window.onload = () => {
+=======
+window.onload = function() {
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 // var btn = document.getElementById("AddBtn");
 // btn.onclick = function myFunction() {
 // var divboard = document.createElement('div');
@@ -474,12 +527,18 @@ window.onload = () => {
 //         }
 
 // console.log(div);
+<<<<<<< HEAD
 //const sasa = document.getElementById('any');
 //sasa.appendChild(card('title', 'text1'));
+=======
+const sasa = document.getElementById('any');
+sasa.appendChild(card('title', 'text1'));
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 // sasa.appendChild(card());
 // sasa.appendChild(card());
 // sasa.appendChild(card());
 // sasa.appendChild(card());
+<<<<<<< HEAD
 // sasa.appendChild(card());
 
 // sasa.appendChild(card());
@@ -487,10 +546,23 @@ window.onload = () => {
 const note_name = document.getElementById("notename");
 if (note_name)note_name.appendChild(modal());
 
+=======
+// sasa.appendChild(card());
+
+// sasa.appendChild(card());
+
+var note_name = document.getElementById("notename");
+if (note_name)note_name.appendChild(modal());
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 
 const lst_content = document.getElementById("listcontent");
 if (lst_content)lst_content.appendChild(newlist());
 
+<<<<<<< HEAD
+=======
+var lst_content = document.getElementById("listcontent");
+if (lst_content)lst_content.appendChild(newlist());
+>>>>>>> 85d0a189efb2b1ba2b51759f30792821046024a1
 
 
 }
