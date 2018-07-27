@@ -4,6 +4,11 @@
       "title": "first note ever",
       "text": "content of the first note ever",
       "id": 1
+    },
+    {
+      "title": "2nd note ever",
+      "text": "lastest commit",
+      "id": 2
     }
   ],
   "comments": [
