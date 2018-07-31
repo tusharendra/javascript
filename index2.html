@@ -17,11 +17,11 @@
 
   <!-- Custom styles for this template -->
   <link href="src/styles/styles.css" rel="stylesheet">
-  <style>
-  #any { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  <!-- <style>
+  #any { list-style-type: none; margin: 0; padding: 0; width: 100%; }
   #any li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
   #any li span { position: absolute; margin-left: -1.3em; }
-  </style>
+  </style> -->
   <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -34,91 +34,50 @@
 
   </head>
 <body>
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+</head>
+<body style="background : cyan ">
+<nav class="navbar navbar-dark black justify-content-between">
+  <a class="navbar-brand" href="#">Amazon Keep</a>
+  <form class="form-inline my-1">
+      <div class="md-form form-sm my-0">
+          <input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search" aria-label="Search">
+      </div>
+      <button class="btn btn-outline-white btn-sm my-0" type="submit">Search</button>
+  </form>
+</nav>
 
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Google Keep</a>
-
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-
-
-      <!-- Links -->
-
-      <form class="form-inline">
-        <div class="md-form my-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        </div>
-      </form>
+<div class="card" style="background : cyan ">
+    <!-- Bacground color -->
+    <div class="card-up indigo lighten-1">
     </div>
-    <!-- Collapsible content -->
-    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
-        <a class="navbar-brand" href="#">Add Note </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse show" id="navbarSupportedContent-4" style="">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link waves-effect waves-light" href="#">
-                <i class="fa fa-envelope"></i> Contact
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light" href="#">
-                <i class="fa fa-gear"></i> Settings</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <i class="fa fa-user"></i> Profile </a>
-              <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
-                <a class="dropdown-item waves-effect waves-light" href="#">Log out</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-  </nav>
-  <!--/.Navbar-->
 
-<div id= "any" class="card-deck">
+    <!-- Avatar -->
+    <div class="avatar mx-auto white"><img src="https://images.g2a.com/newlayout/323x433/1x1x0/78c186c40387/59d62c745bafe3bbc85d0627" class="rounded-circle">
+    </div>
+
+
+
+
+<!-- Card -->
+
+
+</div>
+
+
+<div id= "any" class="row">
   <!-- Card -->
-  <div class="card">
 
-    <img class="card-img-top" src="https://www.fossmint.com/wp-content/uploads/2017/04/Boostnote-Note-Taking-Editor-for-Programmers.png" alt="Card image cap">
-
-    <!-- Card content -->
-    <div class="card-body">
-      <!-- Title -->
-      <h4 class="card-title"><a>Sample Note</a></h4>
-      <!-- Text -->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!-- Button -->
-      <button class="btn btn-primary delete">Delete Note</button>
-    </div>
-  </div>
   <!-- Card -->
 </div>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
-  Add New Note
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+    <h5 class="modal-title" id="exampleModalLabel">Notes</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -130,20 +89,30 @@
         <p>
         <label class="w3-text-blue"><b>Enter List Items</b></label>
         <input class="w3-input w3-border" name="text" type="text"></p>
-        <button type="button" onclick="addItem()" class="btn btn-primary waves-effect waves-light">Add New Item</button>
+        <div id="append_list" class="">
+
+        </div>
+        <!-- <button type="button" onclick="addItem()" class="btn btn-primary waves-effect waves-light">Add New Item</button> -->
+        <button id="new_list" type="button" class="btn btn-dark waves-effect waves-light" name="button">Add New Item</button>
         <!-- <button type="button" onclick="deleteItem()" class="btn btn-primary waves-effect waves-light">Delete New Item</button> -->
+
       </form>
     </div>
     <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary" onclick="addItem()" data-dismiss="modal">Save changes</button>
+    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+    <button type="button" class="btn btn-dark" onclick="addItem()" data-dismiss="modal">Save changes</button>
     </div>
   </div>
   </div>
 </div>
 
+<div class="text-right">
+  <button type="button" class="btn btn-dark  " data-toggle="modal" data-target="#basicExampleModal">
+    Add New Note
+  </button>
+</div>
 
-  
+
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
